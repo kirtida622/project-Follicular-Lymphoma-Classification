@@ -36,6 +36,12 @@ tensorflow – End-to-end machine learning framework for training and deploying 
 keras – High-level API for building and training deep learning models (runs on TensorFlow).
 h5py – Interface for storing and managing large datasets in HDF5 file format.
 
+
+Data Preparation 
+data_preparation_BinaryClass.ipynb)Data Cleaning: Filters out specific noisy or corrupt image IDs from the training set to ensure high-quality input.Dataset Balancing: Downsamples the majority class to create a balanced dataset of 20,000 samples ($10,000$ per class).Preprocessing Pipeline: Automatically resizes images to 224x224, performs stratified splits (Train/Test/Val), and organizes them into directory structures compatible with deep learning frameworks.2. Hybrid Inference 
+
+(predict_image.py)Feature Fusion: Extracts high-level spatial features using a CNN and combines them with textural features derived from Gray-Level Co-occurrence Matrix (GLCM) analysis.Standardized Prediction: Passes the combined feature vector through a StandardScaler and a trained Artificial Neural Network (ANN) to classify unseen images.Format Handling: Includes utilities to handle large-scale medical imaging formats (TIFF) by resizing and converting them for model compatibility.
+
 **Custom CNN Model with Textural analysis**
 Cell 1: Import Libraries
 import numpy as np
